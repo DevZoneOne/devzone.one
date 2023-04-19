@@ -1,0 +1,16 @@
+---
+metadata:
+    url: {{ manifest.url }}
+---
+
+<!DOCTYPE html>
+<html>
+    {% include 'components/head.njk' %}
+    <body>
+        {% include 'components/header.njk' %}
+        <main>
+            {{ content | safe }}
+        </main>
+        {% include 'components/footer.njk' %}
+    </body>
+</html>
