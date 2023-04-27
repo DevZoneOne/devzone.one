@@ -4,16 +4,18 @@ layout: base
 
 <article>
     <h2>{{ title }}</h2>
-    <ul class="post-metadata">
+    <ul role="list" class="post-metadata-time">
         <li>
             <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
         </li>
+    </ul>
+    <ul role="list" class="post-metadata-tags">
         {%- for tag in tags | filterTagList %}
             {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
             <li>
                 <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
-                {%- if not loop.last %}, {% endif %}
             </li>
+            {%- if not loop.last %}<li>-</li>{% endif %}
         {%- endfor %}
     </ul>
     {{ content | safe }}
