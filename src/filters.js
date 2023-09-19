@@ -1,5 +1,6 @@
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
+const markdownItAnchor = require('markdown-it-anchor')
 
 const htmlDateString = (dateObj) => {
   return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
@@ -27,7 +28,7 @@ const min = (...numbers) => {
 };
 
 const md = (content = "") => {
-  return markdownIt({ html: true }).render(content);
+  return markdownIt({ html: true, linkify: true, typographer: true }).use(markdownItAnchor, { level: 2 }).render(content);
 };
 
 const filterTagList = (tags) => {

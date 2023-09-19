@@ -7,4 +7,11 @@ Eleventy is very popular for dynamically creating static websites.
 
 ---
 
+## Introduction
+... todo ...
+
+## Static Site Generation
+... todo ...
+
+## Eleventy
 ... todo ...

@@ -7,6 +7,9 @@ const {
 const transforms = require("./src/transforms");
 const shortcodes = require("./src/shortcodes");
 const filters = require("./src/filters");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require('markdown-it-anchor')
+const pluginTOC = require('eleventy-plugin-toc')
 
 module.exports = function (eleventyConfig) {
   let buildMode;
@@ -25,11 +28,20 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("min", filters.min);
   eleventyConfig.addFilter("md", filters.md);
   eleventyConfig.addFilter("filterTagList", filters.filterTagList);
+  // libraries
+  eleventyConfig.setLibrary("md",
+      markdownIt({
+          html: true,
+          linkify: true,
+          typographer: true,
+      }).use(markdownItAnchor, { level: 2 })
+  );
   // plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(eleventyRssPlugin);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  eleventyConfig.addPlugin(pluginTOC)
   // static
   eleventyConfig.addPassthroughCopy({ "src/static": "/" });
   // shortcodes

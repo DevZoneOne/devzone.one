@@ -3,7 +3,8 @@ layout: base
 ---
 
 <article>
-    <h2>{{ title }}</h2>
+
+    <h1>{{ title }}</h1>
     <ul role="list" class="post-metadata-time">
         <li>
             <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
@@ -18,5 +19,9 @@ layout: base
             {%- if not loop.last %}<li>-</li>{% endif %}
         {%- endfor %}
     </ul>
+    <aside>
+        {{ content | toc | safe }}
+    </aside>
     {{ content | safe }}
+    
 </article>
