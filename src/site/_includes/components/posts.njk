@@ -8,7 +8,6 @@
                 {%- endif %}
             </h3>
         </a>
-        <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
         {{ post.page.excerpt | md | safe }}
     </section>
 {%- endfor %}

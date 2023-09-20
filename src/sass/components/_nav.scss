@@ -1,4 +1,4 @@
-.header-nav {
+nav.header-nav {
   ul {
     display: flex;
     justify-content: center;
@@ -6,5 +6,15 @@
     gap: 1em;
     margin: 0;
     padding: 0;
+  }
+}
+
+nav.toc {
+  position: fixed;
+  right: 0;
+  background-color: yellow;
+
+  ol {
+    padding-right: 16px;
   }
 }

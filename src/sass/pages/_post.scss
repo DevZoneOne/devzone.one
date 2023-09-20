@@ -1,7 +1,12 @@
 .post-metadata-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em;
-  margin: 0;
+  gap: 0.2em;
+}
+
+.post-metadata-time,
+.post-metadata-tags {
+  margin: 0 1rem;
   padding: 0;
+  font-size: small;
 }
