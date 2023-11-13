@@ -3,6 +3,7 @@ const eleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
 const {
   EleventyRenderPlugin,
   EleventyHtmlBasePlugin,
+  EleventyI18nPlugin
 } = require("@11ty/eleventy");
 const transforms = require("./src/transforms");
 const shortcodes = require("./src/shortcodes");
@@ -41,7 +42,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyRssPlugin);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-  eleventyConfig.addPlugin(pluginTOC)
+  eleventyConfig.addPlugin(pluginTOC);
+  eleventyConfig.addPlugin(EleventyI18nPlugin, {
+    defaultLanguage: 'en' // Required
+  });
   // static
   eleventyConfig.addPassthroughCopy({ "src/static": "/" });
   // shortcodes

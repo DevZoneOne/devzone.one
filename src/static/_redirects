@@ -1,0 +1,6 @@
+# Redirect any URLs with the language code in them already
+/en/*   /:splat     301!
+
+# Redirect for end-user’s browser preference override
+/*      /nl/:splat  302   Language=nl
+/*      /en/:splat  200
