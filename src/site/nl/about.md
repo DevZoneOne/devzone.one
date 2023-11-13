@@ -1,10 +1,10 @@
 ---
 layout: page.njk
-title: About DevZone.one
-tags: main
+title: Over DevZone.one
+tags: main-nl
 eleventyNavigation:
-  key: About
+  key: Over
   order: 1
 ---
 
-_To be written_
+_Nog te schrijven_

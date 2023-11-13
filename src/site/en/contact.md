@@ -1,7 +1,7 @@
 ---
 layout: page.njk
 title: Contact
-tags: main
+tags: main-en
 eleventyNavigation:
   key: Contact
   order: 99
