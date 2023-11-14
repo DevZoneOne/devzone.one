@@ -29,6 +29,16 @@ with directly setting up an good project structure.
 
 ### Adding plugins
 ... todo ...
+```js
+const eleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
+
+module.exports = function (eleventyConfig) {
+    ...
+    // plugins
+    eleventyConfig.addPlugin(eleventyRssPlugin);
+    ...
+}
+```
 
 ### Configure filters
 ... todo ...

@@ -11,6 +11,7 @@ const filters = require("./src/filters");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require('markdown-it-anchor')
 const pluginTOC = require('eleventy-plugin-toc')
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
   let buildMode;
@@ -46,6 +47,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
     defaultLanguage: 'en' // Required
   });
+  eleventyConfig.addPlugin(syntaxHighlight);
   // static
   eleventyConfig.addPassthroughCopy({ "src/static": "/" });
   // shortcodes
