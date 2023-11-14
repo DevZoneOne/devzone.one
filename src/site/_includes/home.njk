@@ -5,7 +5,7 @@ numberOfLatestPostsToShow: 3
 
 {{ content | safe }}
 
-{% set collectionName = "post_" + page.lang %}
+{% set collectionName = "post-" + page.lang %}
 
 {% set postsCount = collections[collectionName] | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}

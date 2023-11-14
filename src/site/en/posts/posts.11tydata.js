@@ -1,6 +1,6 @@
 module.exports = {
   layout: "post",
-  tags: ["post_en"],
+  tags: ["post-en"],
   permalink: "en/posts/{{ title | slugify }}/index.html",
   date: "Last Modified"
 };
