@@ -1,0 +1,18 @@
+---
+layout: base
+numberOfLatestPostsToShow: 3
+---
+
+{{ content | safe }}
+
+{% set collectionName = "post-" + page.lang %}
+
+{% set postsCount = collections[collectionName] | length %}
+{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+<h2>
+  Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
+</h2>
+
+{% set postslist = collections[collectionName] | head(-1 * numberOfLatestPostsToShow) %}
+{% set postslistCounter = postsCount %}
+{% include "components/posts.njk" %}

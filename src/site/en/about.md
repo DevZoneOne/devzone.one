@@ -1,7 +1,7 @@
 ---
 layout: page.njk
 title: About DevZone.one
-tags: main
+tags: main-en
 eleventyNavigation:
   key: About
   order: 1

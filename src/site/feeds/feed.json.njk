@@ -9,7 +9,7 @@ permalink: /feeds/feed.json
 	"feed_url": "{{ permalink | htmlBaseUrl(manifest.url) }}",
 	"description": "{{ manifest.description }}",
 	"items": [
-		{%- for post in collections.posts | reverse %}
+		{%- for post in collections['post-en'] | reverse %}
 	{%- set absolutePostUrl = post.url | htmlBaseUrl(manifest.url) %}
 		{
 			"id": "{{ absolutePostUrl }}",

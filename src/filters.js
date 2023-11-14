@@ -33,7 +33,9 @@ const md = (content = "") => {
 
 const filterTagList = (tags) => {
   return (tags || []).filter(
-    (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1
+    (tag) => {
+      return !tag.startsWith("post-") && ["all", "nav"].indexOf(tag) === -1
+    }
   );
 };
 

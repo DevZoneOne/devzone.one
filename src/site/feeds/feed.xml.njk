@@ -7,9 +7,9 @@ permalink: /feeds/feed.xml
     <subtitle>{{ manifest.description }}</subtitle>
     <link href="{{ permalink | htmlBaseUrl(manifest.url) }}" rel="self"/>
     <link href="{{ manifest.url | addPathPrefixToFullUrl }}"/>
-    <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+    <updated>{{ collections['post-en'] | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
     <id>{{ manifest.url }}</id>
-    {%- for post in collections.posts | reverse %}
+    {%- for post in collections['post-en'] | reverse %}
         {%- set absolutePostUrl %}{{ post.url | htmlBaseUrl(manifest.url) }}{%- endset %}
         <entry>
             <title>{{ post.data.title }}</title>

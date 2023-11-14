@@ -1,4 +1,5 @@
-{% set pages = collections.main | eleventyNavigation %}
+{% set collectionName = "main-" + page.lang %}
+{% set pages = collections[collectionName] | eleventyNavigation %}
 <header>
     <nav class="header-nav">
         <ul role="list" class="nav-list">
@@ -6,7 +7,7 @@
                 <li {% if entry.url == page.url %} class="active" {% endif %}>
                     <a href="{{ entry.url | url }}">{{ entry.title }}</a>
                 </li>
-            {%- endfor %}
+            {%- endfor %} 
         </ul>
     </nav>
 </header>

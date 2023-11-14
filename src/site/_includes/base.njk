@@ -4,11 +4,12 @@ metadata:
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ page.lang }}">
     {% include 'components/head.njk' %}
     <body>
         {% include 'components/header.njk' %}
         <main>
+            <div class="warning">This website is under construction</div>
             {{ content | safe }}
         </main>
         {% include 'components/footer.njk' %}
