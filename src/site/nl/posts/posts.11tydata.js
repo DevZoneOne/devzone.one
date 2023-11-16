@@ -1,6 +1,6 @@
 module.exports = {
   layout: "post",
   tags: ["post-nl"],
-  permalink: "nl/posts/{{ title | slugify }}/index.html",
-  date: "Last Modified"
+  permalink: "nl/posts/{{ page.fileSlug | slugify }}/index.html",
+  date: "Last Modified",
 };

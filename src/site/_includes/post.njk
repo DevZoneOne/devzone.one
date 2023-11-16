@@ -17,9 +17,25 @@ class: post
             <li>
                 <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
             </li>
-            {%- if not loop.last %}<li>·</li>{% endif %}
+            {%- if not loop.last %}
+                <li>·</li>
+            {% endif %}
         {%- endfor %}
-    </ul> 
+    </ul>
+    {%- if page.url | locale_links | length %}
+        <ul role="list" class="post-metadata-locales">
+            <li>Available in:</li>
+            {%- for link in page.url | locale_links %}
+                <li>
+                    <a href="{{link.url}}" lang="{{link.lang}}" hreflang="{{link.lang}}">{{link.label}}</a>
+                </li>
+                {%- if not loop.last %}
+                    <li>·</li>
+                {%- endif %}
+            {%- endfor %}
+        </ul>
+    {%- endif %}
+
     {{ content | safe }}
-    
+
 </article>
