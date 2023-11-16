@@ -8,10 +8,10 @@ class: post
     <h1>{{ title }}</h1>
     {{ content | toc | safe }}
     <div class="post-metadata-time">
-        Last updated: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+        {{ i18n[page.lang].last_update }}: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
     </div>
     <ul role="list" class="post-metadata-tags">
-        <li>Tags:</li>
+        <li>{{ i18n[page.lang].tags }}:</li>
         {%- for tag in tags | filterTagList %}
             {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
             <li>
@@ -24,7 +24,7 @@ class: post
     </ul>
     {%- if page.url | locale_links | length %}
         <ul role="list" class="post-metadata-locales">
-            <li>Available in:</li>
+            <li>{{ i18n[page.lang].available_in }}:</li>
             {%- for link in page.url | locale_links %}
                 <li>
                     <a href="{{link.url}}" lang="{{link.lang}}" hreflang="{{link.lang}}">{{link.label}}</a>

@@ -9,7 +9,7 @@ metadata:
     <body>
         {% include 'components/header.njk' %}
         <main>
-            <div class="warning">This website is under construction</div>
+            <div class="warning">{{ i18n[page.lang].under_construction }}</div>
             {{ content | safe }}
         </main>
         {% include 'components/footer.njk' %}

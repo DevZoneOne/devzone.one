@@ -1,0 +1,22 @@
+{
+  "en": {
+    "available_in": "Available in",
+    "last_update": "Last update",
+    "protect_privacy": "Proudly respecting your privacy with",
+    "report": "Please report it on",
+    "suggestions": "Do you have suggestions or see any mistakes on this page?",
+    "tags": "Tags",
+    "trademarks": "are trademarks of",
+    "under_construction": "This website is under construction"
+  },
+  "nl": {
+    "available_in": "Beschikbaar in",
+    "last_update": "Laatste wijziging",
+    "protect_privacy": "Je privacy wordt met trots gerespecteerd met",
+    "report": "Rapporteer het op",
+    "suggestions": "Heb je suggesties of zie je fouten op deze pagina?",
+    "tags": "Labels",
+    "trademarks": "zijn handelsmerken van",
+    "under_construction": "Deze website is in ontwikkeling"
+  }
+}
