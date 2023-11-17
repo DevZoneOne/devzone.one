@@ -1,13 +1,7 @@
-let data = {
+module.exports = {
   layout: "post",
   tags: ["post-nl"],
   date: "git Last Modified",
   permalink: "nl/posts/{{ page.fileSlug | slugify }}/index.html",
   css: ["prism-darcula.css"],
 };
-
-if (process.env.NODE_ENV === "production") {
-  data.date = "git Last Modified";
-}
-
-module.exports = data;
