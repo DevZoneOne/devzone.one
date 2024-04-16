@@ -1,0 +1,17 @@
+---
+metadata:
+    url: {{ manifest.url }}
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+    {% include 'components/head' %}
+    <body>
+        {% include 'components/header' %}
+        <main>
+            <div class="warning">This website is under construction</div>
+            {{ content }}
+        </main>
+        {% include 'components/footer' %}
+    </body>
+</html>

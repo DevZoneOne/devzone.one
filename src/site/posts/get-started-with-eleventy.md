@@ -1,6 +1,6 @@
 ---
 title: Get started with Eleventy
-tags: ["eleventy", "starter", "sass", "postcss"]
+tags: ["eleventy", "starter", "sass", "postcss", "liquid"]
 links:
   GitHub: https://github.com/DevZoneOne/starter.eleventy
 ---
@@ -32,6 +32,10 @@ with directly setting up an good project structure.
 ... todo ...
 
 ### Reorganize the folder structure
+
+... todo ...
+
+### Liquid instead of Nunjucks
 
 ... todo ...
 

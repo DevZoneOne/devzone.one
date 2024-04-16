@@ -1,6 +1,6 @@
 ---
-layout: home.njk
-tags: main-en
+layout: home
+tags: main
 eleventyNavigation:
   key: Home
   order: 0

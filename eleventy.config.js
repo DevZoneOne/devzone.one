@@ -2,14 +2,14 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const eleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
 const {
   EleventyRenderPlugin,
-  EleventyHtmlBasePlugin,
-  EleventyI18nPlugin
+  EleventyHtmlBasePlugin
 } = require("@11ty/eleventy");
 const transforms = require("./src/transforms");
 const shortcodes = require("./src/shortcodes");
 const filters = require("./src/filters");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require('markdown-it-anchor')
+const markdownItFootnote = require('markdown-it-footnote')
 const pluginTOC = require('eleventy-plugin-toc')
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
           html: true,
           linkify: true,
           typographer: true,
-      }).use(markdownItAnchor, { level: 2 })
+      }).use(markdownItAnchor, { level: 2 }).use(markdownItFootnote)
   );
   // plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -44,9 +44,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(pluginTOC);
-  eleventyConfig.addPlugin(EleventyI18nPlugin, {
-    defaultLanguage: 'en' // Required
-  });
   eleventyConfig.addPlugin(syntaxHighlight);
   // static
   eleventyConfig.addPassthroughCopy({ "src/static": "/" });

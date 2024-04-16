@@ -31,8 +31,8 @@
     "eleventy-plugin-toc": "^1.1.5",
     "html-minifier": "^4.0.0",
     "luxon": "^3.3.0",
-    "markdown-it": "^14.0.0",
     "markdown-it-anchor": "^8.6.7",
+    "markdown-it-footnote": "^4.0.0",
     "npm-run-all2": "^6.1.2",
     "path": "^0.12.7",
     "postcss": "^8.4.22",
@@ -42,5 +42,8 @@
     "postcss-scss": "^4.0.6",
     "prettier": "^3.0.0",
     "sass": "^1.62.1"
+  },
+  "overrides": {
+    "nunjucks": ">=3.2.4"
   }
 }

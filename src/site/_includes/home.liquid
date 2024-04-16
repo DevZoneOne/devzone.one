@@ -1,0 +1,15 @@
+---
+layout: base
+numberOfLatestPostsToShow: 3
+---
+
+{{ content }}
+
+{% assign postsCount = collections.posts | size %}
+{% assign latestPostsCount = postsCount | at_most: numberOfLatestPostsToShow %}
+{% assign latestPostsCountNegative = latestPostsCount | times: -1 %}
+<h2>
+  Most recent updated:
+</h2>
+{% assign list = collections.posts | slice: latestPostsCountNegative, latestPostsCount %}
+{% include 'components/posts', postList: list %}

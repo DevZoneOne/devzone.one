@@ -1,5 +1,4 @@
-{% set collectionName = "main-" + page.lang %}
-{% set pages = collections[collectionName] | eleventyNavigation %}
+{% assign pages = collections.main | eleventyNavigation %}
 <header>
     <nav class="header-nav">
         <ul role="list" class="nav-list">

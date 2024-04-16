@@ -1,0 +1,30 @@
+---
+layout: base
+class: post
+---
+
+<article>
+
+    <h1>{{ title }}</h1>
+    {{ content | toc }}
+    <div class="post-metadata-time">
+        Last update: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+    </div>
+    {%- assign taglist = tags | filterTagList %}
+    {% unless taglist == empty %}
+        <ul role="list" class="post-metadata-tags">
+            <li>Tags:</li>
+            {%- for tag in taglist %}
+                <li>
+                    <a href="/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a>
+                </li>
+                {%- if not loop.last %}
+                    <li>·</li>
+                {% endif %}
+            {%- endfor %}
+        </ul>
+    {% endunless %}
+    
+    {{ content }}
+
+</article>
