@@ -8,9 +8,9 @@ class: post
     <h1>{{ title }}</h1>
     {{ content | toc }}
     <div class="post-metadata-time">
-        Last update: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+        Last updated: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
     </div>
-    {%- assign taglist = tags | filterTagList %}
+    {%- assign taglist = tags | filterTagList | sort_natural %}
     {% if taglist.size > 0 %}
         <ul role="list" class="post-metadata-tags">
             <li>Tags:</li>
@@ -25,12 +25,13 @@ class: post
         </ul>
     {% endif %}
     {% if packages.size > 0 %}
+        {%- assign packagelist = packages | sort_natural %}
         <ul role="list" class="post-metadata-versions">
             <li>Used versions:</li>
-            {%- for package in packages %}
+            {%- for package in packagelist %}
                 {% assign ver = package | split: ':' %} 
                 <li>
-                    <a href="/tags/{{ ver[0] }}/">{{ ver[0] }}</a>: {{ ver[1] }} 
+                    <a href="/tags/{{ ver[0] }}/">{{ ver[0] }}</a> {{ ver[1] }} 
                 </li>
                 {%- unless forloop.last %}
                     <li>·</li>
