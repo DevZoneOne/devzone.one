@@ -3,6 +3,8 @@ title: Get started with Eleventy
 tags: ["eleventy", "starter", "sass", "postcss", "liquid"]
 links:
   GitHub: https://github.com/DevZoneOne/starter.eleventy
+packages:
+  - eleventy:2.0.x
 ---
 
 Eleventy is very popular for dynamically creating static websites. But for bigger websites

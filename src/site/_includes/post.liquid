@@ -11,19 +11,33 @@ class: post
         Last update: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
     </div>
     {%- assign taglist = tags | filterTagList %}
-    {% unless taglist == empty %}
+    {% if taglist.size > 0 %}
         <ul role="list" class="post-metadata-tags">
             <li>Tags:</li>
             {%- for tag in taglist %}
                 <li>
                     <a href="/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a>
                 </li>
-                {%- if not loop.last %}
+                {%- unless forloop.last %}
                     <li>·</li>
-                {% endif %}
+                {% endunless %}
             {%- endfor %}
         </ul>
-    {% endunless %}
+    {% endif %}
+    {% if packages.size > 0 %}
+        <ul role="list" class="post-metadata-versions">
+            <li>Used versions:</li>
+            {%- for package in packages %}
+                {% assign ver = package | split: ':' %} 
+                <li>
+                    <a href="/tags/{{ ver[0] }}/">{{ ver[0] }}</a>: {{ ver[1] }} 
+                </li>
+                {%- unless forloop.last %}
+                    <li>·</li>
+                {% endunless %}
+            {%- endfor %}
+        </ul>
+    {% endif %}
     
     {{ content }}
 
