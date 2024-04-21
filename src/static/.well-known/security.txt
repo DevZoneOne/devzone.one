@@ -1,0 +1,4 @@
+Contact: https://devzone.one/contact/
+Expires: 2024-12-31T23:59:59.000Z
+Preferred-Languages: en, nl, es
+Canonical: https://devzone.one/.well-known/security.txt

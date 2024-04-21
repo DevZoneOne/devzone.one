@@ -13,18 +13,17 @@
   <meta name="og:site_name" content="{{ manifest.title }}">
   <meta name="og:title" content="{{ shortTitle }}">
   <meta name="og:url" content="{{manifest.url}}{{ page.url }}">
-  <meta name="og:web:url" content="{{manifest.url}}{{ page.url }}">
-  <meta name="description" content="{{ description or manifest.meta.description }}">
+  <meta name="description" content="{{ description | default: manifest.meta.description }}">
   <meta name="keywords" content="{{ manifest.meta.keywords | join: ', ' }}">
-  <meta name="author" content="{{ author or manifest.meta.author }}">
+  <meta name="author" content="{{ author | default: manifest.meta.author }}">
   <!-- STYLING -->
   <link rel="stylesheet" href="/css/{{ manifest['style.css'] }}"/>
   {%- for file in css %}
     <link rel="stylesheet" href="/css/{{file}}"/>
   {%- endfor %}
   <!-- FEEDS -->
-  <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-  <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+  <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ manifest.title }}">
+  <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ manifest.title }}">
   <!-- ANALYTICS -->
   {% include './analytics' %}
 </head>

@@ -1,7 +1,9 @@
 ---
 title: Get started with Eleventy
+author: DevZone
 tags: ["eleventy", "starter", "sass", "postcss", "liquid"]
 links:
+  11ty: https://www.11ty.dev/
   GitHub: https://github.com/DevZoneOne/starter.eleventy
 packages:
   - eleventy:2.0.x
