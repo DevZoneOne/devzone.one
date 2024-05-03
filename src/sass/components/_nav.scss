@@ -1,20 +1,9 @@
-nav.header-nav {
-  ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1em;
-    margin: 0;
-    padding: 0;
-  }
-}
-
 nav.toc {
   position: fixed;
   right: 0;
-  background-color: yellow;
+  background-color: var(--theme-background);
 
   ol {
-    padding-right: 16px;
+    padding-right: 8px;
   }
 }

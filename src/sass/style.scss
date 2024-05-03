@@ -1,6 +1,6 @@
-@use "vendors/normalize";
+@use "pkg:@divezone/divezone-web-styles" as dz;
 
-@use "base";
-@use "layout";
 @use "components";
 @use "pages";
+
+@include dz.theme(map-get(dz.$themes, green));

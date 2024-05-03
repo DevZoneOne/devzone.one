@@ -1,11 +1,12 @@
 ---
 title: Protect privacy with Fathom Analytics
 tags: ["fathom", "analytics", "privacy"]
+draft: true
 links:
   fathom: https://usefathom.com/ref/DTPELY
 ---
 
-A good alternative for Google Analytics is Fathom Analytics....
+A good alternative to Google Analytics is Fathom Analytics...
 
 ---
 

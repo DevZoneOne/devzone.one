@@ -1,0 +1,22 @@
+<div class="logo logo--green">
+    <div class="logo--pretitle">{{ preTitle }}</div>
+    <div></div>
+    <div class="logo--titlePart1">
+        {{ titlePart1 | default: 'DIVE' }}
+    </div>
+    <div class="logo--titlePart2">
+        {{ titlePart2 | default: 'ZONE' }}
+    </div>
+    <div></div>
+    <div class="logo--posttitle">
+      {%- if postTitle %}
+      {%- assign chars = postTitle | split: '' %}
+        {%- for char in chars %}
+          <span>{{ char }}</span>
+        {%- endfor %}
+      {%- endif %}
+    </div>
+    {%- if slogan %}
+    <div class="logo--slogan">{{ slogan }}</div>
+    {%- endif %}
+</div>

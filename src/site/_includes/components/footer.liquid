@@ -1,26 +1,31 @@
 <footer>
-    <hr>
-    <div>
-        Do you have suggestions or see any mistakes on this page?
+  <div>Do you have suggestions or see any mistakes on this page?</div>
+
+  <div>
+    Please report it on
+    <a href="https://github.com/DevZoneOne/devzone.one/issues">GitHub</a>
+    <a href="https://github.com/DevZoneOne/devzone.one/blob/main/{{ page.inputPath }}" target="_blank">(source file)</a>
+  </div>
+
+  <div class="footer--copyright">
+    © {% year %} DevZone.one
+    <div class="footer--trademarks">
+      DevZone.one & <a href="https://devzone.solutions">DevZone.Solutions</a>
+      are trademarks of
+      <a href="https://divezone.company">The DiveZone Company</a>
     </div>
-    <div>
-        Please report it on
-        <a href="https://github.com/DevZoneOne/devzone.one/issues">GitHub</a>
-        <a href="https://github.com/DevZoneOne/devzone.one/blob/main/{{ page.inputPath }}" target="_blank">(source file)</a>
-    </div>
-    <div>
-        <a href="https://www.buymeacoffee.com/DevZone" target="_blank">Buy me a coffee!</a>
-    </div>
-    <p/>
-    <div class="footer--fathom">
-        Proudly respecting your privacy with
-        <a href="https://usefathom.com/ref/DTPELY" target="_blank">Fathom Analytics</a>!
-    </div>
-    <hr>
-    <div class="footer--copyright">© {% year %} DevZone.one</div>
-    <hr>
-    <div class="footer--trademarks">DevZone.one & <a href="https://devzone.solutions">DevZone.Solutions</a>
-        are trademarks of
-        <a href="https://divezone.company">The DiveZone Company</a>
-    </div>
+  </div>
+
+  <div class="footer--socials">
+    {% for social in socials %}
+      <a id="social-{{ social.key | slugify }}" class="{{ social.icon }}" href="{{ social.url }}" target="_blank">
+        <span class="sr-only">{{ social.key }}</span>
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="footer--fathom">
+    Proudly respecting your privacy with
+    <a href="https://usefathom.com/ref/DTPELY" target="_blank">Fathom Analytics</a>!
+  </div>
 </footer>

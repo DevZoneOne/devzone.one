@@ -2,16 +2,18 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const eleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
 const {
   EleventyRenderPlugin,
-  EleventyHtmlBasePlugin
+  EleventyHtmlBasePlugin,
 } = require("@11ty/eleventy");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
+const markdownItFootnote = require("markdown-it-footnote");
+const pluginTOC = require("eleventy-plugin-toc");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 const transforms = require("./src/transforms");
 const shortcodes = require("./src/shortcodes");
 const filters = require("./src/filters");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require('markdown-it-anchor')
-const markdownItFootnote = require('markdown-it-footnote')
-const pluginTOC = require('eleventy-plugin-toc')
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const helpers = require("./src/helpers");
 
 module.exports = function (eleventyConfig) {
   let buildMode;
@@ -30,13 +32,26 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("min", filters.min);
   eleventyConfig.addFilter("md", filters.md);
   eleventyConfig.addFilter("filterTagList", filters.filterTagList);
+  // global data
+  eleventyConfig.addGlobalData("eleventyComputed.permalink", function () {
+    return (data) => helpers.draftPermaLink(data, buildMode);
+  });
+  eleventyConfig.addGlobalData(
+    "eleventyComputed.eleventyExcludeFromCollections",
+    function () {
+      return (data) => helpers.draftExcludeFromCollections(data, buildMode);
+    }
+  );
   // libraries
-  eleventyConfig.setLibrary("md",
-      markdownIt({
-          html: true,
-          linkify: true,
-          typographer: true,
-      }).use(markdownItAnchor, { level: 2 }).use(markdownItFootnote)
+  eleventyConfig.setLibrary(
+    "md",
+    markdownIt({
+      html: true,
+      linkify: true,
+      typographer: true,
+    })
+      .use(markdownItAnchor, { level: 2 })
+      .use(markdownItFootnote)
   );
   // plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
