@@ -4,3 +4,7 @@
 @use "pages";
 
 @include dz.theme(map-get(dz.$themes, green));
+
+@media (prefers-color-scheme: dark) {
+  @include dz.theme(map-get(dz.$themes, darkgreen));
+}
