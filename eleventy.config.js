@@ -1,21 +1,21 @@
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const eleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
-const {
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import eleventyRssPlugin from "@11ty/eleventy-plugin-rss";
+import {
   EleventyRenderPlugin,
   EleventyHtmlBasePlugin,
-} = require("@11ty/eleventy");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItFootnote = require("markdown-it-footnote");
-const pluginTOC = require("eleventy-plugin-toc");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+} from "@11ty/eleventy";
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItFootnote from "markdown-it-footnote";
+import pluginTOC from "eleventy-plugin-toc";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
-const transforms = require("./src/transforms");
-const shortcodes = require("./src/shortcodes");
-const filters = require("./src/filters");
-const helpers = require("./src/helpers");
+import filters from "./src/filters.js";
+import helpers from "./src/helpers.js";
+import shortcodes from "./src/shortcodes.js";
+import transforms from "./src/transforms.js";
 
-module.exports = function (eleventyConfig) {
+export default async function (eleventyConfig) {
   let buildMode;
   // config
   eleventyConfig.setFrontMatterParsingOptions({
@@ -32,6 +32,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("min", filters.min);
   eleventyConfig.addFilter("md", filters.md);
   eleventyConfig.addFilter("filterTagList", filters.filterTagList);
+  eleventyConfig.addLiquidFilter("dateToRfc3339", eleventyRssPlugin.dateToRfc3339);
+  eleventyConfig.addLiquidFilter("getNewestCollectionItemDate", eleventyRssPlugin.getNewestCollectionItemDate);
   // global data
   eleventyConfig.addGlobalData("eleventyComputed.permalink", function () {
     return (data) => helpers.draftPermaLink(data, buildMode);
@@ -55,7 +57,6 @@ module.exports = function (eleventyConfig) {
   );
   // plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPlugin(eleventyRssPlugin);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(pluginTOC);

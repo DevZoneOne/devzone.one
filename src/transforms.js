@@ -1,10 +1,10 @@
-const htmlmin = require("html-minifier");
-const prettier = require("prettier");
-const path = require("path");
+import minifier from "html-minifier-terser";
+import prettier from "prettier";
+import path from "path";
 
 const minify = (content, outputPath) => {
   if (outputPath && outputPath.endsWith(".html")) {
-    let minified = htmlmin.minify(content, {
+    let minified = minifier.minify(content, {
       useShortDoctype: true,
       removeComments: true,
       collapseWhitespace: true,
@@ -39,7 +39,7 @@ const prettify = (content, outputPath) => {
   return content;
 };
 
-module.exports = {
+export default {
   minify,
   prettify,
 };
