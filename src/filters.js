@@ -1,6 +1,6 @@
-const { DateTime } = require("luxon");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require('markdown-it-anchor')
+import { DateTime } from "luxon";
+import markdownIt from "markdown-it";
+import markdownItAnchor from 'markdown-it-anchor';
 
 const htmlDateString = (dateObj) => {
   return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
@@ -37,7 +37,7 @@ const filterTagList = (tags) => {
   );
 };
 
-module.exports = {
+export default {
   filterTagList,
   head,
   htmlDateString,
