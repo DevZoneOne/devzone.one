@@ -38,6 +38,7 @@
     "luxon": "^3.4.4",
     "markdown-it-anchor": "^9.0.1",
     "markdown-it-footnote": "^4.0.0",
+    "minify-xml": "^4.4.1",
     "npm-run-all2": "^6.2.2",
     "path": "^0.12.7",
     "postcss": "^8.4.39",

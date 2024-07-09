@@ -19,7 +19,7 @@ permalink: /feeds/feed.json
 	{% else %}""{% endif %},
 			"date_published": "{{ post.date | dateToRfc3339 }}"
 		}
-		{% if not loop.last %},{% endif %}
+		{% if not forloop.last %},{% endif %}
 {%- endfor %}
 ]
 }

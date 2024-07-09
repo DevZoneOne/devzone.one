@@ -1,5 +1,6 @@
 ---
 title: Protect privacy with Fathom Analytics
+author: DevZone
 tags: ["fathom", "analytics", "privacy"]
 draft: true
 links:
