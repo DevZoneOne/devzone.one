@@ -28,10 +28,5 @@
     "key": "Github",
     "url": "https://www.github.com/devzone.one",
     "icon": "fab fa-github-square"
-  },
-  {
-    "key": "BuyMeaCoffee",
-    "url": "https://www.buymeacoffee.com/DevZone",
-    "icon": "fa fa-cup-togo"
   }
 ]

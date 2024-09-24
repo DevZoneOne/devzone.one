@@ -17,7 +17,7 @@
   <meta name="keywords" content="{{ manifest.meta.keywords | join: ', ' }}">
   <meta name="author" content="{{ author | default: manifest.meta.author }}">
   <!-- STYLING -->
-  <link rel="stylesheet" href="/css/{{ manifest['style.css'] }}">
+  <link rel="stylesheet" href="/css/{{ style['style.css'] }}">
   {%- for file in css %}
     <link rel="stylesheet" href="/css/{{file}}">
   {%- endfor %}
