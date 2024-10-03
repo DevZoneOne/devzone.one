@@ -6,14 +6,17 @@ metadata:
 <html lang="en">
   {% include 'components/head' %}
   <body>
-    {% include 'components/header' %}
-    <main>
-      <div class="draft warning">This website is under construction</div>
-      {%- if draft %}
-        <div class="draft">DRAFT</div>
-      {%- endif %}
-      {{ content }}
-    </main>
-    {% include 'components/footer' %}
+    <div class="page-layout">
+      {% include 'components/header' %}
+      {% include 'components/nav' %}
+      <main>
+        <div class="draft warning">This website is under construction</div>
+        {%- if draft %}
+          <div class="draft">DRAFT</div>
+        {%- endif %}
+        {{ content }}
+      </main>
+      {% include 'components/footer' %}
+    </div>
   </body>
 </html>

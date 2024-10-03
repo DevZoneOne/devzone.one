@@ -1,26 +1,4 @@
-{% assign pages = collections.main | eleventyNavigation %}
+
 <header>
-  <div class="header--logo">
-    <a href="/">{% include './logo', titlePart1: 'DEV', postTitle: ' ONE ' %}</a>
-  </div>
-  <div class="header--nav">
-    <nav class="nav--main">
-      <ul role="list">
-        {%- for entry in pages %}
-          <li
-            {% if page.url contains entry.url %}
-              class="active"
-            {% endif %}
-          >
-            <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-            {% if entry.children != empty %}
-              {% if page.url contains entry.url %}
-                {% assign parent = entry.key %}
-              {% endif %}
-            {% endif %}
-          </li>
-        {%- endfor %}
-      </ul>
-    </nav>
-  </div>
+  <a href="/">{% include './logo', titlePart1: 'DEV', postTitle: ' ONE ' %}</a>
 </header>
