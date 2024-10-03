@@ -1,0 +1,19 @@
+{% assign pages = collections.main | eleventyNavigation %}
+<nav class="nav--main">
+    <ul role="list">
+    {%- for entry in pages %}
+        <li
+        {% if page.url contains entry.url %}
+            class="active"
+        {% endif %}
+        >
+        <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+        {% if entry.children != empty %}
+            {% if page.url contains entry.url %}
+            {% assign parent = entry.key %}
+            {% endif %}
+        {% endif %}
+        </li>
+    {%- endfor %}
+    </ul>
+</nav>
