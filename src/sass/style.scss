@@ -1,10 +1,11 @@
 @use "pkg:@divezone/divezone-web-styles" as dz;
+@use "sass:map" as map;
 
 @use "components";
 @use "pages";
 
-@include dz.theme(map-get(dz.$themes, green));
+@include dz.theme(map.get(dz.$themes, green));
 
 @media (prefers-color-scheme: dark) {
-  @include dz.theme(map-get(dz.$themes, darkgreen));
+  @include dz.theme(map.get(dz.$themes, darkgreen));
 }

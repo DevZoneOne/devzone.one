@@ -6,7 +6,10 @@ class: post
 <article>
 
     <h1>{{ title }}</h1>
-    {{ content | toc }}
+    <details class="nav--toc">
+        <summary>Contents</summary>
+        {{ content | toc }}
+    </details>
     <div class="post-metadata-time">
         Last updated: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
     </div>

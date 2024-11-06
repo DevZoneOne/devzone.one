@@ -1,9 +1,32 @@
-nav.toc {
-  position: fixed;
-  right: 0;
+.nav--toc {
+  border: 2px solid var(--theme-secondary);
+  border-radius: .4em;
+  padding: .5rem .5rem 0 .5rem;
+  margin: 0 -.5rem 3em -.5rem;
+
+  summary {
+    padding-bottom: .5rem;
+    border-bottom: 2px dotted transparent;
+  }
+
+  nav.toc {
+    ol {
+      padding: 0 1.5em;
+    }
+  }
+}
+
+.nav--toc[open] {
   background-color: var(--theme-background-secondary);
 
-  ol {
-    padding-right: 8px;
+  &>summary {
+    border-color: var(--theme-secondary);
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .nav--toc {
+    margin: 0 .5rem 1em .5rem;
   }
 }
