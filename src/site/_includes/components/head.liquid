@@ -17,10 +17,10 @@
   <meta name="keywords" content="{{ manifest.meta.keywords | join: ', ' }}">
   <meta name="author" content="{{ author | default: manifest.meta.author }}">
   <!-- STYLING -->
-  <link rel="stylesheet" href="/css/{{ style['style.css'] }}">
   {%- for file in css %}
     <link rel="stylesheet" href="/css/{{file}}">
   {%- endfor %}
+  <link rel="stylesheet" href="/css/{{ style['style.css'] }}">
   <!-- FAV ICON -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
