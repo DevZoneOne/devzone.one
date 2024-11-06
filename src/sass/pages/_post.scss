@@ -13,12 +13,20 @@
   font-size: small;
 }
 
-@media screen and (max-width: 750px) {
-  pre[class*="language-"] {
-    padding: .4em;
-    margin-left: 4px;
-    border-radius: 4px;
-    width: min(100%, 98vw);
-    overflow-x: scroll;
+pre {
+	padding: 1rem;
+	max-width: calc(100vw - 22rem);
+	overflow: auto;
+	tab-size: 2;
+	word-break: normal;
+	hyphens: none;
+
+   code {
+	    overflow-x: auto;
+	    white-space: pre;
+	    display: block;
+	    min-width: 100px;
+	    max-width: 100%;
+	    min-height: 100px;
   }
 }
