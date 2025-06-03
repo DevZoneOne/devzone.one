@@ -9,11 +9,9 @@ metadata:
     <div class="page-layout">
       {% include 'components/header' %}
       {% include 'components/nav' %}
-      <main>
+      <main {% if draft %}draft{% endif %}
+        class="main--{{ layout }} main--{{ page.fileSlug }}">
         <div class="draft warning">This website is under construction</div>
-        {%- if draft %}
-          <div class="draft">DRAFT</div>
-        {%- endif %}
         {{ content }}
       </main>
       {% include 'components/footer' %}

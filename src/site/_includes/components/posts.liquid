@@ -1,5 +1,5 @@
 {%- for post in postList | reverse %}
-    <section class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+    <section {% if post.data.draft %}draft{% endif %} class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
         <a href="{{ post.url }}" class="postlist-link">
             <h3>
                 {%- if post.data.title %}
@@ -12,4 +12,7 @@
         <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate: 'LLLL yyyy' }}</time>
         {{ post.page.excerpt | md }}
     </section>
+{%- else %}
+<h2>No posts yet...</h2>
+<p>“Patience is when you’re supposed to get mad, but you choose to understand.”</p>
 {%- endfor %}

@@ -8,8 +8,10 @@ numberOfLatestPostsToShow: 3
 {% assign postsCount = collections.posts | size %}
 {% assign latestPostsCount = postsCount | at_most: numberOfLatestPostsToShow %}
 {% assign latestPostsCountNegative = latestPostsCount | times: -1 %}
+{%- if latestPostsCount > 0 %}
 <h2>
-  Most recent updated:
+  Most recent (updated) posts
 </h2>
+{%- endif %}
 {% assign list = collections.posts | slice: latestPostsCountNegative, latestPostsCount %}
 {% include 'components/posts', postList: list %}

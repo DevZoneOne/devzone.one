@@ -1,12 +1,13 @@
 ---
-title: Get started with Eleventy
+title: Get started with Eleventy 3
 author: DevZone
 tags: ["eleventy", "starter", "sass", "postcss", "liquid"]
+draft: true
 links:
   11ty: https://www.11ty.dev/
   GitHub: https://github.com/DevZoneOne/starter.eleventy
 packages:
-  - eleventy:2.0.x
+  - eleventy:3.0.x
 ---
 
 Eleventy is very popular for dynamically creating static websites. But for bigger websites, the default project structure is a bit messy. Creating an easy maintainable project starts
@@ -69,7 +70,7 @@ module.exports = function (eleventyConfig) {
 
 ... todo ...
 
-### blog posts
+### Blog posts
 
 ... todo ...
 
