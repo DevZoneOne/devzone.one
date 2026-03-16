@@ -1,0 +1,10 @@
+<div class="footer--socials">
+    {{ range hugo.Data.socials }}
+    <a id="social-{{ .key | urlize }}" class="{{ .icon }}" href="{{ .url }}" target="_blank">
+        <span class="sr-only">{{ .key }}</span>
+    </a>
+    {{ end }}
+    <a id="social-bmc" href="https://www.buymeacoffee.com/DevZone" target="_blank">
+      <img src="/images/bmc-logo.svg" width="20" height="30"/>
+    </a>
+</div>

@@ -1,0 +1,11 @@
+{{ with .File }}
+<div class="footer--suggestions">
+    <div>Do you have suggestions or see any mistakes on this page?</div>
+    <div>
+        Please report it on
+        <a href="https://github.com/DevZoneOne/devzone.one/issues">GitHub</a>
+        <a href="https://github.com/DevZoneOne/devzone.one/blob/main/content/{{ .Path }}" target="_blank">(source
+            file)</a>
+    </div>
+</div>
+{{ end }}

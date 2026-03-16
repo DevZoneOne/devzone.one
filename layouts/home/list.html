@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="draft warning">This website is under construction</div>
+
+{{ range first 5 (where .Site.RegularPages "Type" "posts").ByDate.Reverse }}
+<section {{ if .Draft }}draft{{ end }} class="postlist-item">
+    <a href="{{ .RelPermalink }}" class="postlist-link">
+        <h3>{{ .Title }}</h3>
+    </a>
+    <time class="postlist-date" datetime="{{ .Date }}">{{ .Date.Format "January 2006"}}</time>
+    {{ .Summary }}
+</section>
+{{ else }}
+<h2>No posts yet...</h2>
+<p>“Patience is when you’re supposed to get mad, but you choose to understand.”</p>
+{{ end }}
+
+{{ end }}
