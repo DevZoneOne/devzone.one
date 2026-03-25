@@ -8,7 +8,7 @@ links:
   divezone: https://dive.zone/example
 ---
 
-Introduction text.gfv
+Introduction text.
 
 <!--more-->
 

@@ -1,32 +1,36 @@
 .post-metadata-tags,
 .post-metadata-versions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.2em;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.2em;
 }
 
 .post-metadata-time,
 .post-metadata-tags,
 .post-metadata-versions {
-  margin: 0 1rem;
-  padding: 0;
-  font-size: small;
+	margin: 0 1rem;
+	padding: 0;
+	font-size: small;
 }
 
-pre {
-	padding: 1rem;
-	max-width: calc(100vw - 2rem);
-	overflow: auto;
-	tab-size: 2;
-	word-break: normal;
-	hyphens: none;
+.highlight {
+	margin: 0.5rem 1rem;
 
-   code {
-	    overflow-x: auto;
-	    white-space: pre;
-	    display: block;
-	    min-width: 100px;
-	    max-width: 100%;
-	    min-height: 100px;
-  }
+	pre {
+		padding: 1rem;
+		max-width: calc(100vw - 2rem);
+		overflow: auto;
+		tab-size: 2;
+		word-break: normal;
+		hyphens: none;
+
+		code {
+			overflow-x: auto;
+			white-space: pre;
+			display: block;
+			min-width: 100px;
+			max-width: 100%;
+			min-height: 100px;
+		}
+	}
 }

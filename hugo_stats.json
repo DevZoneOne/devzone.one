@@ -31,6 +31,7 @@
     ],
     "classes": [
       "active",
+      "button",
       "draft",
       "fa-facebook-square",
       "fa-github-square",
@@ -46,9 +47,9 @@
       "footer--trademarks",
       "highlight",
       "logo",
-      "logo--green",
       "logo--posttitle",
       "logo--pretitle",
+      "logo--theme",
       "logo--titlePart1",
       "logo--titlePart2",
       "main--about",
@@ -56,6 +57,7 @@
       "main--copyright",
       "main--fathom-analytics",
       "main--get-started-with-eleventy",
+      "main--get-started-with-hugo",
       "main--home",
       "main--internal",
       "main--page",
@@ -79,6 +81,7 @@
       "deploy-on-commit",
       "disclaimer",
       "eleventy",
+      "eleventy-starter-template",
       "empty-project",
       "firebase",
       "github-pages",
@@ -88,8 +91,8 @@
       "limitations",
       "liquid-instead-of-nunjucks",
       "netlify",
+      "organize-the-folder-structure",
       "pages",
-      "reorganize-the-folder-structure",
       "setup-new-project",
       "social-bmc",
       "social-facebook",
@@ -97,7 +100,7 @@
       "social-instagram",
       "social-linkedin",
       "social-threads",
-      "static-site-generation"
+      "static-site-generation-ssg"
     ]
   }
 }

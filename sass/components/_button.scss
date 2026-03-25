@@ -1,0 +1,9 @@
+.button {
+    border: 1px solid var(--theme-primary);
+    background-color: var(--theme-primary);
+    color: var(--theme-background-primary);
+    padding: .2rem .5rem;
+    border-radius: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+}
