@@ -2,6 +2,7 @@
   "title": "DevZone.one",
   "url": "https://devzone.one",
   "language": "en",
+  "theme": "devzone",
   "meta": {
     "author": "DevZone.one",
     "description": "DevZone.one - another kind of tech blog",
