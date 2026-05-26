@@ -1,27 +1,26 @@
 [
   {
     "key": "LinkedIn",
-    "url": "https://linkedin.com/company/devzoneone",
-    "icon": "fab fa-linkedin"
+    "url": "https://linkedin.com/company/devzoneone"
   },
   {
     "key": "Facebook",
-    "url": "https://www.facebook.com/DevZoneOne",
-    "icon": "fab fa-facebook-square"
+    "url": "https://www.facebook.com/DevZoneOne"
   },
   {
     "key": "Instagram",
-    "url": "https://www.instagram.com/DevZoneOne",
-    "icon": "fab fa-instagram-square"
+    "url": "https://www.instagram.com/DevZoneOne"
   },
   {
     "key": "Threads",
-    "url": "https://www.threads.net/DevZoneOne",
-    "icon": "fab fa-square-threads"
+    "url": "https://www.threads.net/DevZoneOne"
   },
   {
     "key": "Github",
-    "url": "https://www.github.com/devzone.one",
-    "icon": "fab fa-github-square"
+    "url": "https://www.github.com/devzone.one"
+  },
+  {
+    "key": "bmc",
+    "url": "https://www.buymeacoffee.com/DevZone"
   }
 ]
